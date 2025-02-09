@@ -20,7 +20,12 @@ with
                     relation_alias="pay_acceptance"
                 )
             }},
-            pay_chargeback.was_payment_charged_back
+            pay_chargeback.was_payment_charged_back,
+            case
+                when pay_chargeback.was_payment_charged_back is not null
+                then true
+                else false
+            end as has_chargedback_information
 
         from pay_acceptance
         left join pay_chargeback on pay_acceptance.payment_key = pay_chargeback.payment_key

@@ -55,3 +55,7 @@ models:
       - name: was_payment_charged_back
         data_type: boolean
         description: "Indicates whether the payment was charged back (true) or not (false)."
+
+      - name: has_chargedback_information
+        data_type: boolean
+        description: "Indicates whether the transaction has associated chargeback information. Returns `true` if chargeback data is present, otherwise `false`."              
