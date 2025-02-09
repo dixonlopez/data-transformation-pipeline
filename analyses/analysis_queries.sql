@@ -35,13 +35,14 @@ order by 2
 
 /*
     Test: List the countries where the amount of declined transactions exceeded $25M
-    Result: AE (United Arab Emirates), US (United States), CA (Canada)
+    Result: United States (US), United Arab Emirates (AE), Canada (CA), and Mexico (MX)
 */
-select iso_country_code
+select iso_country_code, sum(amount_charged_usd)
 from {{ ref("payments") }}
 where was_transaction_accepted = false
 group by 1
-having sum(amount_charged_local_currency) > 25000000
+having sum(amount_charged_usd) > 25000000
+order by sum(amount_charged_usd)
 ;
 
 /*
