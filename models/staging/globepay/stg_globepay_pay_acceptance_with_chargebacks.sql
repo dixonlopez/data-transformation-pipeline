@@ -42,6 +42,7 @@ select
     amount_charged_local_currency,
     exchange_rate,
     amount_charged_usd,
-    was_payment_charged_back
+    was_payment_charged_back,
+    has_chargedback_information
 
 from combined
