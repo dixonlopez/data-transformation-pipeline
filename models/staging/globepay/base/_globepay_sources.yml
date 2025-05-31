@@ -1,8 +1,0 @@
-version: 2
-
-sources:
-  - name: globepay
-    schema: public
-    tables:
-      - name: globe_pay_acceptance_report
-      - name: globe_pay_chargeback_report
