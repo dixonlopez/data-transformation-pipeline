@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: payments
+    schema: pipelines
+    tables:
+      - name: synthetical_payments
+        alias: payments
