@@ -24,8 +24,8 @@ with
                 when product = 'BUSINESS'
                 then 3
             end as product_level,
-            price as price_usd,
-            amount as amount_paid_usd,
+            cast (price as numeric) as price_usd,
+            cast (amount as numeric) as amount_paid_usd,
             cast(period as int64) as period,
             cast((price * period) as numeric) as gross_amount_usd,
             case
