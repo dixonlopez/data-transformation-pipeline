@@ -2,21 +2,6 @@
     materialized='table'
 ) }}
 
-/*
-Given that the payment table is immutable in the past (it is an assumption), I would have created it as incremental since the past does not change. 
-I didn't do it now because I am working with the free tier of dbt Cloud and it does not allow me to.
-
-{{ config(
-    materialized='incremental',
-    unique_key=['summary_date', 'billing_country', 'product', 'subscription_type'],
-    partition_by={
-        "field": "summary_date",
-        "data_type": "date",
-        "granularity": "day"
-    }
-) }}
-*/
-
 
 with payments as (
     select
