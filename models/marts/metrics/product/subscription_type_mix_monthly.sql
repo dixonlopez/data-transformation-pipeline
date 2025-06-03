@@ -10,14 +10,7 @@ Interpretation:
 Annual subscriptions often indicate higher customer commitment and provide more upfront cash flow, which can be beneficial for financial planning. Monitoring this mix helps assess customer loyalty, payment preferences, and the effectiveness of incentives for annual plans. A higher proportion of annual plans can contribute to more stable recurring revenue.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with daily_summary as (
     select

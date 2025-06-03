@@ -10,14 +10,7 @@ Interpretation:
 A critical metric for SaaS. A high or increasing churn rate indicates customer dissatisfaction, poor retention, or a mismatch between product and market needs. Lower churn is essential for sustainable growth and maximizing customer lifetime value. Monitoring this metric helps identify issues that impact customer loyalty and recurring revenue.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with user_events as (
     select

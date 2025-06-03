@@ -10,14 +10,7 @@ Interpretation:
 Indicates the size of your engaged customer base. A growing number of active users suggests product stickiness and a healthy user ecosystem. This metric is crucial for understanding the overall reach and utilization of your service. It can be segmented further by product or country for deeper insights.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with daily_summary as (
     select

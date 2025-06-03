@@ -10,14 +10,7 @@ Interpretation:
 Helps understand which products are most popular or generate the most revenue. A positive shift in the product mix towards higher-tier products (GURU, BUSINESS) indicates successful upselling and that customers are finding more value in advanced features, which is generally desirable for revenue growth. It's crucial for product strategy and pricing evaluation.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with daily_summary as (
     select

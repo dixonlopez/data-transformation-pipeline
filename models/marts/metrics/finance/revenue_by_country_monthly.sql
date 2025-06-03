@@ -10,14 +10,7 @@ Interpretation:
 Identifies top-performing geographical markets and areas for potential expansion or focused marketing efforts. Helps in understanding regional market dynamics, identifying market fit, and optimizing localized strategies. It can highlight opportunities or challenges in specific regions.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with daily_summary as (
     select

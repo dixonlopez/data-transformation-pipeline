@@ -10,14 +10,7 @@ Interpretation:
 Shows how much value, on average, each active user brings to the business. An increasing ARPU can indicate successful upselling, cross-selling, or the acquisition of higher-value new customers. It's a good metric to assess the monetization efficiency of your user base and the perceived value of your product.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with daily_summary as (
     select

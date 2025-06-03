@@ -10,14 +10,7 @@ Interpretation:
 Provides a longer-term view of the business's recurring revenue potential. Useful for forecasting and evaluating the overall scale of the subscription business. It helps stakeholders understand the company's annual financial run rate based on its current recurring revenue. While MRR is good for short-term operational insights, ARR is better for long-term strategic planning and valuation.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with mrr_data as (
     select

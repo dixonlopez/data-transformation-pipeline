@@ -10,14 +10,7 @@ Interpretation:
 A direct measure of the effectiveness of marketing and sales efforts in attracting new customers. Consistent new customer acquisition is vital for business expansion and offsetting customer churn. A healthy trend in this metric indicates that the top of your sales funnel is performing well.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with user_history as (
     select

@@ -1,5 +1,3 @@
--- models/marts/metrics/mrr_monthly.sql
-
 /*
 Metric: Monthly Recurring Revenue (MRR)
 
@@ -7,17 +5,12 @@ Definition:
 The predictable recurring revenue a business expects to receive every month from its active subscriptions.
 
 Interpretation:
-A key indicator of business health and growth. Consistent MRR growth suggests a strong customer base and successful acquisition/retention efforts. Declining MRR is a major red flag, indicating potential issues with customer churn or new customer acquisition. It's a fundamental metric for understanding the ongoing financial performance of a subscription-based business.
+A key indicator of business health and growth. Consistent MRR growth suggests a strong customer base and successful acquisition/retention efforts. 
+Declining MRR is a major red flag, indicating potential issues with customer churn or new customer acquisition. 
+It's a fundamental metric for understanding the ongoing financial performance of a subscription-based business.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with daily_summary as (
     select

@@ -10,14 +10,7 @@ Interpretation:
 Reflects customer satisfaction and perceived value of different product tiers. High upgrade rates indicate successful product development, effective value proposition, and customer growth within the product ecosystem. High downgrade rates can signal issues with higher-tier features, pricing, or customer fit, potentially leading to revenue loss. Monitoring both helps understand customer journey and product-market fit.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with user_history as (
     select

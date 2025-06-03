@@ -10,14 +10,7 @@ Interpretation:
 Represents the overall financial intake of the business. While MRR focuses on predictable recurring income, Total Revenue provides a comprehensive view of all cash inflows from sales. It's important to track alongside MRR to understand the full financial picture, especially if there are significant one-off payments or initial large annual payments that are not fully reflected in MRR for the current month.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with daily_summary as (
     select

@@ -10,14 +10,7 @@ Interpretation:
 Helps evaluate the effectiveness of pricing strategies and promotional offers. A high or increasing discount rate might indicate over-reliance on discounts to acquire or retain customers, potentially signaling a perceived lower value of the product or unsustainable pricing. It's crucial to balance acquisition/retention with profitability.
 */
 
-{{ config(
-    materialized='table',
-    partition_by={
-        "field": "month_start_date",
-        "data_type": "date",
-        "granularity": "month"
-    }
-) }}
+{{ config( materialized='table' ) }}
 
 with daily_summary as (
     select
