@@ -16,12 +16,6 @@ with payments as (
         gross_amount_usd,
         user_id
     from {{ ref('stg_payment_system__payments') }}
-    {% if is_incremental() %}
-        -- Incremental load: only processes new data since the last run.
-        -- We subtract 1 day to ensure no data is missed if the incremental run occurs mid-day
-        -- or if there's a slight latency in data ingestion.
-        where transaction_date >= (select date_sub(max(summary_date), interval 1 day) from {{ this }})
-    {% endif %}
 ),
 
 daily_summary as (
