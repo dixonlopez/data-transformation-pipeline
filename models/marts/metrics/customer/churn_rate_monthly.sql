@@ -51,16 +51,27 @@ monthly_churn_calculation as (
     from lagged_status
     group by 1
     order by 1
+),
+monthly_new_customers as (
+    select
+        date_trunc(transaction_date, month) as month_start_date,
+        count(distinct user_id) as new_customer_count
+    from {{ ref('dim_user_subscriptions_history') }}
+    where subscription_event_type = 'New Acquisition'
+    group by 1
 )
 
 select
-    month_start_date,
-    churned_users_count,
-    active_users_previous_month_count,
-    -- Calculate churn rate, handling division by zero
+    mc.month_start_date,
+    mc.churned_users_count,
+    mc.active_users_previous_month_count,
+    nc.new_customer_count,
     case
-        when active_users_previous_month_count > 0
-        then cast(churned_users_count as numeric) / active_users_previous_month_count
+        when mc.active_users_previous_month_count > 0
+        then cast(mc.churned_users_count as numeric) / mc.active_users_previous_month_count
         else 0
     end as monthly_churn_rate
-from monthly_churn_calculation
+from monthly_churn_calculation mc
+left join monthly_new_customers nc
+  on mc.month_start_date = nc.month_start_date
+order by mc.month_start_date
