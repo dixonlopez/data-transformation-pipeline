@@ -1,5 +1,3 @@
--- models/marts/metrics/arpu_monthly.sql
-
 /*
 Metric: Average Revenue Per User (ARPU) - Monthly
 

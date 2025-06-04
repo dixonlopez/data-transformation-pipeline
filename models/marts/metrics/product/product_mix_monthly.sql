@@ -1,5 +1,3 @@
--- models/marts/metrics/product_mix_monthly.sql
-
 /*
 Metric: Product Mix - Monthly
 

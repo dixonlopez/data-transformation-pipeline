@@ -1,5 +1,3 @@
--- models/marts/metrics/churn_rate_monthly.sql
-
 /*
 Metric: Churn Rate (User Churn Rate) - Monthly Approximation
 

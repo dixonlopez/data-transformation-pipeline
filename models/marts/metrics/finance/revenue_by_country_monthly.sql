@@ -1,5 +1,3 @@
--- models/marts/metrics/revenue_by_country_monthly.sql
-
 /*
 Metric: Revenue by Country - Monthly
 

@@ -1,5 +1,3 @@
--- models/marts/metrics/arr_annual.sql
-
 /*
 Metric: Annual Recurring Revenue (ARR)
 

@@ -1,5 +1,3 @@
--- models/marts/metrics/subscription_type_mix_monthly.sql
-
 /*
 Metric: Subscription Type Mix - Monthly
 

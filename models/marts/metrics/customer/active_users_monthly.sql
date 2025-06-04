@@ -1,5 +1,3 @@
--- models/marts/metrics/active_users_monthly.sql
-
 /*
 Metric: Active Users - Monthly
 

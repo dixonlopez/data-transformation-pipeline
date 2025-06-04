@@ -1,5 +1,3 @@
--- models/marts/metrics/upgrade_downgrade_rate_monthly.sql
-
 /*
 Metric: Upgrade/Downgrade Rate - Monthly
 

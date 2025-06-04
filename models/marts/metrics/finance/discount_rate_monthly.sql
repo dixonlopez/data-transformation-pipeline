@@ -1,5 +1,3 @@
--- models/marts/metrics/discount_rate_monthly.sql
-
 /*
 Metric: Discount Rate - Monthly
 

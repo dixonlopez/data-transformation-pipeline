@@ -1,5 +1,3 @@
--- models/marts/metrics/clv_historical_per_user.sql
-
 /*
 Metric: Customer Lifetime Value (CLV) - Historical
 

@@ -1,5 +1,3 @@
--- models/marts/metrics/total_revenue_monthly.sql
-
 /*
 Metric: Total Revenue
 

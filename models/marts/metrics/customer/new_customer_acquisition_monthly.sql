@@ -1,5 +1,3 @@
--- models/marts/metrics/new_customer_acquisition_monthly.sql
-
 /*
 Metric: New Customer Acquisition - Monthly
 
